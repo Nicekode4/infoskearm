@@ -7,49 +7,50 @@ let todayDate = today.getDate()
 function getDate() {
     switch (today.getMonth() + 1) {
         case 1:
-            date.innertext = todayDate + ". Januar " + year
+            date.innerText = todayDate + ". Januar " + year
             break;
             case 2:
-                date.innertext = todayDate + ". Febuar " + year
+                date.innerText = todayDate + ". Febuar " + year
                 break;
                 case 3:
-                    date.innertext = todayDate + ". Marts " + year
+                    date.innerText = todayDate + ". Marts " + year
                     break;
                     case 4:
-                        date.innertext = todayDate + ". April " + year
+                        date.innerText = todayDate + ". April " + year
                         break;
                         case 5:
-                            date.innertext = todayDate + ". Maj " + year
+                            date.innerText = todayDate + ". Maj " + year
                             break;
                             case 6:
-                                date.innertext = todayDate + ". Juni " + year
+                                date.innerText = todayDate + ". Juni " + year
                                 break;
                                 case 7:
-                                    date.innertext = todayDate + ". Juli " + year
+                                    date.innerText = todayDate + ". Juli " + year
                                     break;
                                     case 8:
-                                        date.innertext = todayDate + ". August " + year
+                                        date.innerText = todayDate + ". August " + year
                                         break;
                                         case 9:
-                                            date.innertext = todayDate + ". September " + year
+                                            date.innerText = todayDate + ". September " + year
                                             break;
                                             case 10:
-                                                date.innertext = todayDate + ". Oktober " + year
+                                                date.innerText = todayDate + ". Oktober " + year
                                                 break;
                                                 case 11:
-                                                    date.innertext = todayDate + ". November " + year
+                                                    date.innerText = todayDate + ". November " + year
                                                     break;
                                                     case 12:
-                                                        date.innertext = todayDate + ". December " + year
+                                                        date.innerText = todayDate + ". December " + year
                                                         break;
     
         default:
-            date.innertext = "Kan ikke hente dato..."
+            date.innerText = "Kan ikke hente dato..."
             break;
     }
 }
+getDate()
 
 setInterval(() => {
     today = new Date();
-    time.innertext = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds()
+    time.innerText = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds()
 }, 1000);
