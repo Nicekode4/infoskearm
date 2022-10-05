@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+#news {
+  background-color: rebeccapurple;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +19,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 3em;
+  margin-left: 3em;
 }
 #time img {
   background-color: #C26969;
@@ -28,6 +33,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 3em;
+  margin-left: 3em;
 }
 #dish img {
   background-color: #C26969;
@@ -41,12 +47,27 @@
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 3em;
+  margin-left: 3em;
 }
 #bus img {
   background-color: #C26969;
   border-radius: 20%;
 }
 #bus #busSpan {
+  margin-left: 1em;
+}
+
+#weather {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+}
+#weather img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#weather #weatherSpan {
   margin-left: 1em;
 }
 
