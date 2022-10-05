@@ -51,3 +51,13 @@
         margin-left: 1em;
     }
 }
+
+#schedule{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#news{
+    position: absolute;
+    bottom: 0;
+}
