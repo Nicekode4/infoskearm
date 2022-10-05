@@ -1,7 +1,7 @@
 const ApiWeather = [];
 const containerMain = document.querySelector('#container-main')
 const Endpoint = "https://api.openweathermap.org/data/2.5/weather?q=Aalborg&lang=da&appid=4d58d6f0a435bf7c5a52e2030f17682d&units=metric";
-
+console.log(document.getElementById("weather"));
 fetch(Endpoint)
 
   .then(response => {
@@ -19,6 +19,7 @@ fetch(Endpoint)
   .finally(() => {
    
     if(id >= 200 && id <= 232) {
+      document.getElementById("weatherImg").src = "../Ikoner/cloud-thunder.svg";
         console.log("Torden");
     }else if(id >= 300 && id <= 321) {
       console.log("Støv regn");
@@ -35,7 +36,7 @@ fetch(Endpoint)
     }else {
         console.log("Intet vejr idag");
     }
-    document.getElementById("weather").innerHTML += `
+    document.getElementById("weatherSpan").innerHTML += `
    <p>${WeatherRN}</p>
    <p>${Math.round(TempRN)}°</p>`  
     })
@@ -43,3 +44,4 @@ fetch(Endpoint)
 
 
 
+    
