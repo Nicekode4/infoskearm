@@ -1,2 +1,63 @@
 @use "./colors/colors" as *;
 @use "./fonts/fonts" as *;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: $roboto;
+    font-weight: 500;
+}
+
+#container-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#time{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-top: 3em;
+    img{
+        background-color: $m-red;
+        border-radius: 20%;
+    }
+    #timeSpan{
+        margin-left: 1em;
+    }
+}
+
+#dish{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-top: 3em;
+    img{
+        background-color: $m-red;
+        border-radius: 20%;
+    }
+    #dishSpan{
+        margin-left: 1em;
+    }
+}
+
+#bus{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-top: 3em;
+    img{
+        background-color: $m-red;
+        border-radius: 20%;
+    }
+    #busSpan{
+        margin-left: 1em;
+    }
+}
+
+#schedule{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#news{
+    position: absolute;
+    bottom: 0;
+}
