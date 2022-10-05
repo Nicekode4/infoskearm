@@ -16,7 +16,7 @@ fetch(Endpoint)
   })
   .finally(() => {
     ApiWeather.map((obj) => {
-        console.log(obj)
+        // console.log(obj)
         const {weather, main} = obj
         renderBusCard(weather[0], main)
     })
@@ -30,7 +30,8 @@ const renderBusCard = (w, m) => {
     document.getElementById("weather").innerHTML += `
    <p>${main}</p>
    <p>${temp}</p>
-   <img>${icon}</img>
    `
     
 }
+
+
