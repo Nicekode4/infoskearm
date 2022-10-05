@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#time {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+#time img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#time #timeSpan {
+  margin-left: 1em;
+}
+
+#dish {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+#dish img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#dish #dishSpan {
+  margin-left: 1em;
+}/*# sourceMappingURL=main.css.map */
