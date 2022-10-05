@@ -21,7 +21,7 @@ for (let index = 0; index < 7; index++) {
 		})
 		.finally(() => {
 
-			document.querySelector('#news').innerHTML += `<marquee><h4>${newsData.title}</h4></marquee>
+			document.querySelector('#newsM').innerHTML += `<h4>${newsData.title}</h4>
 	`
 		})
 }
