@@ -1,3 +1,82 @@
-@use "./colors/colors" as *;
-@use "./fonts/fonts" as *;
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+#news {
+  background-color: rebeccapurple;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
+#container-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#time {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+}
+#time img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#time #timeSpan {
+  margin-left: 1em;
+}
+
+#dish {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+}
+#dish img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#dish #dishSpan {
+  margin-left: 1em;
+}
+
+#bus {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+}
+#bus img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#bus #busSpan {
+  margin-left: 1em;
+}
+
+#weather {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+}
+#weather img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#weather #weatherSpan {
+  margin-left: 1em;
+}
+
+#schedule {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#news {
+  position: absolute;
+  bottom: 0;
+}/*# sourceMappingURL=main.css.map */
