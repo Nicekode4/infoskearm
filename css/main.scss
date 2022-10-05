@@ -1,5 +1,6 @@
 @use "./colors/colors" as *;
 @use "./fonts/fonts" as *;
+@import "../css/partials/news";
 
 *{
     margin: 0;
@@ -17,6 +18,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
     margin-top: 3em;
+    margin-left: 3em;
     img{
         background-color: $m-red;
         border-radius: 20%;
@@ -30,6 +32,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
     margin-top: 3em;
+    margin-left: 3em;
     img{
         background-color: $m-red;
         border-radius: 20%;
@@ -43,6 +46,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
     margin-top: 3em;
+    margin-left: 3em;
     img{
         background-color: $m-red;
         border-radius: 20%;
@@ -51,6 +55,21 @@
         margin-left: 1em;
     }
 }
+
+#weather{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-top: 3em;
+    margin-left: 3em;
+    img{
+        background-color: $m-red;
+        border-radius: 20%;
+    }
+    #weatherSpan{
+        margin-left: 1em;
+    }
+}
+
 
 #schedule{
     display: grid;
