@@ -11,40 +11,29 @@ fetch(Endpoint)
     WeatherRN = WeatherData.weather[0].description
     TempRN = WeatherData.main.temp
     id = WeatherData.weather[0].id
+    console.log(id);
   })
   .catch(error => {
     console.error(error);
   })
   .finally(() => {
-    switch (id) {
-      case "clouds":
-        containerMain.style.backgroundImage="url()";
-      break;
-    
-      case id > 200:
-    "thunder"
-      break;
-    
-      case id > 300:
-        "drizzle"
-      break;
-    
-      case id > 500:
-        "rain"
-      break;
-
-      case id > 600:
-        "snow"
-        break;
-        case id > 700:
-          "tåget"
-          break;
-          case 800:
-            "skyfrit"
-            break;
-            case id > 801:
-              "Clouds"
-              break;
+   
+    if(id >= 200 && id <= 232) {
+        console.log("Torden");
+    }else if(id >= 300 && id <= 321) {
+      console.log("Støv regn");
+    }else if(id >= 500 && id <= 531) {
+      console.log("Regn");
+    }else if(id >= 600 && id <= 622) {
+      console.log("Sne");
+    }else if(id >= 701 && id <= 781) {
+      console.log("Tåget");
+    }else if(id == 800) {
+      console.log("Skyfrit");
+    }else if(id >= 801 && id <= 804) {
+      console.log("Skyet");
+    }else {
+        console.log("Intet vejr idag");
     }
     document.getElementById("weather").innerHTML += `
    <p>${WeatherRN}</p>
