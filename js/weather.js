@@ -37,7 +37,7 @@ fetch(Endpoint)
     }
     document.getElementById("weather").innerHTML += `
    <p>${WeatherRN}</p>
-   <p>${Math.round(TempRN)}</p>`  
+   <p>${Math.round(TempRN)}°</p>`  
     })
 
 
