@@ -6,6 +6,11 @@
     padding: 0;
 }
 
+#container-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 #time{
     display: grid;
     grid-template-columns: auto 1fr;
@@ -26,6 +31,18 @@
         border-radius: 20%;
     }
     #dishSpan{
+        margin-left: 1em;
+    }
+}
+
+#bus{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    img{
+        background-color: $m-red;
+        border-radius: 20%;
+    }
+    #busSpan{
         margin-left: 1em;
     }
 }

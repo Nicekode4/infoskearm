@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+#container-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 #time {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -25,5 +30,17 @@
   border-radius: 20%;
 }
 #dish #dishSpan {
+  margin-left: 1em;
+}
+
+#bus {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+#bus img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#bus #busSpan {
   margin-left: 1em;
 }/*# sourceMappingURL=main.css.map */
