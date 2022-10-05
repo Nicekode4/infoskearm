@@ -1,9 +1,8 @@
-    const url = 'https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?format=json'
+    const url2 = 'https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?format=json'
     const STORAGE_KEY = "canteen"
-    let apiData;
+    let apiData2;
     const meal = document.querySelector('#meal')
     let menu = JSON.parse(localStorage.getItem('canteen'))
-    console.log(menu);
     
     if (today.getDay() == localStorage.getItem('today')) {
         switch (today.getDay()) {
@@ -35,7 +34,7 @@
         //parsing our data
     })
     .then(data => {
-        apiData = data  
+        apiData2 = data  
     })
     .catch(error => {
         console.log(error);
@@ -43,10 +42,10 @@
     })
     .finally(() => {
     localStorage.setItem('today', today.getDay())
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(apiData))
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(apiData2))
     
-    meal.innerText = apiData.Days[1].Dish
+    meal.innerText = apiData2.Days[1].Dish
         
     }) 
-    apiData = localStorage.getItem(STORAGE_KEY)
+    apiData2 = localStorage.getItem(STORAGE_KEY)
     } 
