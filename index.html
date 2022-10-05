@@ -5,25 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./js/time.js" defer></script>
-    Menu bør først 
     <script src="./js/menu.js" defer></script>
+    <script src="./js/bus.js" defer></script>
     <title>Infoskærm</title>
   </head>
   <body>
     <section id="container-main">
       <article id="left">
         <div id="time">
-          <h2 id="date"></h2>
-          <p id="clock"></p>
-          <img src="" alt="" />
+          <span id="timeSpan">
+            <h2 id="date"></h2>
+            <p id="clock"></p>
+          </span>
+          <img src="./Ikoner/clock.svg" alt="clock_icon" />
         </div>
         <div id="dish">
           <h2></h2>
           <p id="meal">Ingen ret at vise</p>
           <img src="" alt="" />
+
+          <span>
+            <h2></h2>
+            <p id="meal"></p>
+          </span>
+          <img src="./Ikoner/menu.svg" alt="menu_icon" />
         </div>
-        <div id="bus"></div>
-        <div id="weather"></div>
+        <div id="bus">
+          <span id="busSpan"></span>
+          <img src="./Ikoner/buss.svg" alt="bus_icon" />
+        </div>
+        <div id="weather">
+          <span id="weatherSpan"></span>
+        </div>
       </article>
       <article id="right">
         <div id="schedule">
