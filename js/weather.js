@@ -1,6 +1,6 @@
 const ApiWeather = [];
-
-const Endpoint = "https://api.openweathermap.org/data/2.5/weather?q=Aalborg&appid=4d58d6f0a435bf7c5a52e2030f17682d&units=metric";
+const containerMain = document.querySelector('#container-main')
+const Endpoint = "https://api.openweathermap.org/data/2.5/weather?q=Aalborg&lang=da&appid=4d58d6f0a435bf7c5a52e2030f17682d&units=metric";
 
 fetch(Endpoint)
 
@@ -8,51 +8,49 @@ fetch(Endpoint)
     return response.json();
   })
   .then(WeatherData => {
-    // console.log(WeatherData);
-    ApiWeather.push(WeatherData);
+    WeatherRN = WeatherData.weather[0].description
+    TempRN = WeatherData.main.temp
+    id = WeatherData.weather[0].id
   })
   .catch(error => {
     console.error(error);
   })
   .finally(() => {
-    ApiWeather.map((obj) => {
-        // console.log(obj)
-        const {weather, main} = obj
-        renderBusCard(weather[0], main)
-    })
-  });
+    switch (id) {
+      case "clouds":
+        containerMain.style.backgroundImage="url()";
+      break;
+    
+      case id > 200:
+    "thunder"
+      break;
+    
+      case id > 300:
+        "drizzle"
+      break;
+    
+      case id > 500:
+        "rain"
+      break;
 
-const renderBusCard = (w, m) => {
-   const {main, id} = w
-   const {temp} = m
-
-    console.log(w, m)
+      case id > 600:
+        "snow"
+        break;
+        case id > 700:
+          "tåget"
+          break;
+          case 800:
+            "skyfrit"
+            break;
+            case id > 801:
+              "Clouds"
+              break;
+    }
     document.getElementById("weather").innerHTML += `
-   <p>${main}</p>
-   <p>${Math.round(temp)}</p>
-   `
-    
-}
+   <p>${WeatherRN}</p>
+   <p>${Math.round(TempRN)}</p>`  
+    })
 
-function weatherFunction (weatherSwitch){
-switch (weatherSwitch) {
-  case "clouds":
-    
-  break;
-
-  case "sun":
-
-  break;
-
-  case "thunder":
-
-  break;
-
-  case "rain":
-
-  break;
-}
-}
 
 
 
