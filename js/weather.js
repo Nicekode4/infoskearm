@@ -23,15 +23,36 @@ fetch(Endpoint)
   });
 
 const renderBusCard = (w, m) => {
-   const {main, icon, id} = w
+   const {main, id} = w
    const {temp} = m
 
     console.log(w, m)
     document.getElementById("weather").innerHTML += `
    <p>${main}</p>
-   <p>${temp}</p>
+   <p>${Math.round(temp)}</p>
    `
     
 }
+
+function weatherFunction (weatherSwitch){
+switch (weatherSwitch) {
+  case "clouds":
+    
+  break;
+
+  case "sun":
+
+  break;
+
+  case "thunder":
+
+  break;
+
+  case "rain":
+
+  break;
+}
+}
+
 
 
