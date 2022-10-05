@@ -2,6 +2,8 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto";
+  font-weight: 500;
 }
 
 #container-main {
@@ -12,6 +14,7 @@
 #time {
   display: grid;
   grid-template-columns: auto 1fr;
+  margin-top: 3em;
 }
 #time img {
   background-color: #C26969;
@@ -24,6 +27,7 @@
 #dish {
   display: grid;
   grid-template-columns: auto 1fr;
+  margin-top: 3em;
 }
 #dish img {
   background-color: #C26969;
@@ -36,6 +40,7 @@
 #bus {
   display: grid;
   grid-template-columns: auto 1fr;
+  margin-top: 3em;
 }
 #bus img {
   background-color: #C26969;
