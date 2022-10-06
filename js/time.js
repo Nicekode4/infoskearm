@@ -52,7 +52,6 @@ getDate()
 
 setInterval(() => {
     today = new Date();
-    console.log(today.getHours());
     if (today.getHours() < 10) {
         time.innerText = "0" + today.getHours() + "." + today.getMinutes() + "." + today.getSeconds()
     }

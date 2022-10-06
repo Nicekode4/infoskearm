@@ -1,4 +1,4 @@
-
+let timeout = 200;
 const Endpoint = "https://api.openweathermap.org/data/2.5/weather?q=Aalborg&lang=da&appid=4d58d6f0a435bf7c5a52e2030f17682d&units=metric";
 fetch(Endpoint)
 
@@ -16,37 +16,90 @@ fetch(Endpoint)
     console.error(error);
   })
   .finally(() => {
-   
-    if(id >= 200 && id <= 232) {
-      document.getElementById("container-main").style.backgroundImage = "url(/Ikoner/backgrounds/Thunder_AdobeExpress.gif)";
+  
+    if(id >= 200 && id <= 232) { //Torden
+      $().ready(function() {
+        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
+      });
+      setTimeout(() => {
+        if (document.querySelectorAll("iframe").length == 0) {
+          location.reload();
+        }
+      }, timeout);
       document.getElementById("weatherImg").src = "../Ikoner/cloud-thunder.svg";
         console.log("Torden");
-    }else if(id >= 300 && id <= 321) {
+
+    }else if(id >= 300 && id <= 321) { //Støv regn
       document.getElementById("weatherImg").src = "../Ikoner/cloud-rain.svg";
-      document.getElementById("container-main").style.backgroundImage = "url(/Ikoner/backgrounds/Rain_AdobeExpress.gif)";
-      console.log("Støv regn");
-    }else if(id >= 500 && id <= 531) {
-      document.getElementById("weatherImg").src = "../Ikoner/cloud-rain.svg";
-      document.getElementById("container-main").style.backgroundImage = "url(/Ikoner/backgrounds/Rain_AdobeExpress.gif)";
-      console.log("Regn");
-    }else if(id >= 600 && id <= 622) {
-      document.getElementById("weatherImg").src = "../Ikoner/cloud-snow.svg";
-      document.getElementById("container-main").style.backgroundImage = "url(/Ikoner/backgrounds/Snow_AdobeExpress.gif)";
-      console.log("Sne");
-    }else if(id >= 701 && id <= 781) {
-      document.getElementById("weatherImg").src = "../Ikoner/cloud.svg";
-      document.getElementById("container-main").style.backgroundImage = "url(/Ikoner/backgrounds/Clouds_AdobeExpress.gif)";
-      console.log("Tåget");
-    }else if(id == 800) {
-      document.getElementById("weatherImg").src = "../Ikoner/cloud-sun.svg";
-      document.getElementById("container-main").style.backgroundImage = "url(/Ikoner/backgrounds/Sun_AdobeExpress.gif)";
-      console.log("Skyfrit");
-    }else if(id >= 801 && id <= 804) {
-      document.getElementById("weatherImg").src = "../Ikoner/cloud.svg";
-      
       $().ready(function() {
-        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true}); // where idOfYourVideo is the YouTube ID.
+        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
       });
+      setTimeout(() => {
+        if (document.querySelectorAll("iframe").length == 0) {
+          location.reload();
+        }
+      }, timeout);
+      console.log("Støv regn");
+
+    }else if(id >= 500 && id <= 531) { //Regn
+      document.getElementById("weatherImg").src = "../Ikoner/cloud-rain.svg";
+      $().ready(function() {
+        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
+      });
+      setTimeout(() => {
+        if (document.querySelectorAll("iframe").length == 0) {
+          location.reload();
+        }
+      }, timeout);
+      console.log("Regn");
+
+    }else if(id >= 600 && id <= 622) { //Sne
+      document.getElementById("weatherImg").src = "../Ikoner/cloud-snow.svg";
+      $().ready(function() {
+        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
+      });
+      setTimeout(() => {
+        if (document.querySelectorAll("iframe").length == 0) {
+          location.reload();
+        }
+      }, timeout);
+      console.log("Sne");
+
+    }else if(id >= 701 && id <= 781) { //Tåget
+      document.getElementById("weatherImg").src = "../Ikoner/cloud.svg";
+      $().ready(function() {
+        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
+      });
+      setTimeout(() => {
+        if (document.querySelectorAll("iframe").length == 0) {
+          location.reload();
+        }
+      }, timeout);
+      console.log("Tåget");
+
+    }else if(id == 800) { //Skyfrit
+      document.getElementById("weatherImg").src = "../Ikoner/cloud-sun.svg";
+      $().ready(function() {
+        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
+      });
+      setTimeout(() => {
+        if (document.querySelectorAll("iframe").length == 0) {
+          location.reload();
+        }
+      }, timeout);
+      console.log("Skyfrit");
+
+    }else if(id >= 801 && id <= 804) { //Skyet
+      document.getElementById("weatherImg").src = "../Ikoner/cloud.svg";
+      $().ready(function() {
+        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
+      });
+      setTimeout(() => {
+        if (document.querySelectorAll("iframe").length == 0) {
+          location.reload();
+        }
+      }, timeout);
+      
       console.log("Skyet");
     }else {
         console.log("Intet vejr idag");
