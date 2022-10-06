@@ -59,12 +59,9 @@ const renderSchedule = (obj) => {
     const {Education, Room, StartDate, Subject, Team} = obj;
 
     document.getElementById('schedule').innerHTML +=`
-    <span>
-    <h6>${Education}</h6>
-    <h6>${Room}</h6>
     <h6>${formatDate(StartDate,"time")}</h6>
+    <h6>${Education}</h6>
     <h6>${Subject}</h6>
-    <h6>${Team}</h6>
-    </span>
+    <h6>${Room}</h6>
     `
 }
