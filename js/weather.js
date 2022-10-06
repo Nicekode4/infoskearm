@@ -1,7 +1,5 @@
-const ApiWeather = [];
 const containerMain = document.querySelector('#container-main')
 const Endpoint = "https://api.openweathermap.org/data/2.5/weather?q=Aalborg&lang=da&appid=4d58d6f0a435bf7c5a52e2030f17682d&units=metric";
-console.log(document.getElementById("weather"));
 fetch(Endpoint)
 
   .then(response => {
