@@ -45,7 +45,7 @@ marquee h4 {
 #dish {
   display: grid;
   grid-template-columns: auto 1fr;
-  margin-top: 3em;
+  margin-top: 7em;
   margin-left: 3em;
 }
 #dish img {
@@ -59,7 +59,7 @@ marquee h4 {
 #bus {
   display: grid;
   grid-template-columns: auto 1fr;
-  margin-top: 3em;
+  margin-top: 7em;
   margin-left: 3em;
 }
 #bus img {
@@ -71,21 +71,18 @@ marquee h4 {
   display: grid;
   grid-template-columns: 33% 33% 33%;
 }
-#bus #busSpan img {
-  background-color: #C26969;
-  border-radius: 20%;
-}
-#bus #weather {
+
+#weather {
   display: grid;
   grid-template-columns: auto 1fr;
-  margin-top: 3em;
+  margin-top: 7em;
   margin-left: 3em;
 }
-#bus #weather img {
+#weather img {
   background-color: #C26969;
   border-radius: 20%;
 }
-#bus #weather #weatherSpan {
+#weather #weatherSpan {
   margin-left: 1em;
 }
 
