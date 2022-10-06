@@ -69,18 +69,13 @@
 #bus #busSpan {
   margin-left: 1em;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 33% 33% 33%;
   margin-top: 3em;
   margin-left: 3em;
 }
 #bus #busSpan img {
   background-color: #C26969;
   border-radius: 20%;
-}
-#bus #busSpan #busSpan {
-  margin-left: 1em;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
 }
 #bus #weather {
   display: grid;

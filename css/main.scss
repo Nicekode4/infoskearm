@@ -57,17 +57,12 @@
   #busSpan {
     margin-left: 1em;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 33% 33% 33%;
     margin-top: 3em;
     margin-left: 3em;
     img {
       background-color: $m-red;
       border-radius: 20%;
-    }
-    #busSpan {
-      margin-left: 1em;
-      display: grid;
-      grid-template-columns: 33% 33% 33%;
     }
   }
 
