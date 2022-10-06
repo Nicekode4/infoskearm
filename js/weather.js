@@ -43,7 +43,10 @@ fetch(Endpoint)
       console.log("Skyfrit");
     }else if(id >= 801 && id <= 804) {
       document.getElementById("weatherImg").src = "../Ikoner/cloud.svg";
-      document.getElementById("container-main").style.backgroundImage = "url(/Ikoner/backgrounds/Clouds_AdobeExpress.gif)";
+      
+      $().ready(function() {
+        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true}); // where idOfYourVideo is the YouTube ID.
+      });
       console.log("Skyet");
     }else {
         console.log("Intet vejr idag");
