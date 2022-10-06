@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 #news {
-  background-color: rebeccapurple;
+  background-color: #C26969;
+  padding: 0.5em 0.5em;
+}
+#news h4 {
+  color: #fff;
+  display: inline;
+  padding: 1em 1em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
 }
 
 * {
