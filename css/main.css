@@ -85,6 +85,7 @@ marquee h4 {
 }
 #weather #weatherSpan {
   margin-left: 1em;
+  text-transform: capitalize;
 }
 
 #schedule {
