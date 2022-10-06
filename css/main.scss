@@ -58,6 +58,7 @@
     margin-left: 1em;
     display: grid;
     grid-template-columns: 15% 40% 60%;
+    margin-top: -2em;
   }
 }
 
@@ -72,6 +73,7 @@
   }
   #weatherSpan {
     margin-left: 1em;
+    text-transform: capitalize;
   }
 }
 
