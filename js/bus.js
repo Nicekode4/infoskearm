@@ -1,6 +1,5 @@
 const url = "https://xmlopen.rejseplanen.dk/bin/rest.exe/multiDepartureBoard?id1=851400602&id2=851973402&rttime&format=json&useBus=1"
 let apiData;
-const via = undefined;
 
 for (let index = 0; index < 6; index++) {
     fetch(url)
@@ -11,7 +10,6 @@ for (let index = 0; index < 6; index++) {
         .then((data) => {
             //The data you wanna use
             apiData = data.MultiDepartureBoard.Departure[index]
-            console.log(apiData.rtTime);
 
         })
         .catch((error) => {
@@ -40,7 +38,6 @@ if (apiData.rtTime == undefined) {
 <p style="padding: 0; margin: 0;">${apiData.time}<span style="color: red;" >${delay}</span></p>`
     }
     
-console.log(typeof apiData.rtTime);
         })
 
 
