@@ -34,7 +34,7 @@
 #dish {
   display: grid;
   grid-template-columns: auto 1fr;
-  margin-top: 3em;
+  margin-top: 7em;
   margin-left: 3em;
   img {
     background-color: $m-red;
@@ -48,7 +48,7 @@
 #bus {
   display: grid;
   grid-template-columns: auto 1fr;
-  margin-top: 3em;
+  margin-top: 7em;
   margin-left: 3em;
   img {
     background-color: $m-red;
@@ -58,16 +58,12 @@
     margin-left: 1em;
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    img {
-      background-color: $m-red;
-      border-radius: 20%;
-    }
   }
 
   #weather {
     display: grid;
     grid-template-columns: auto 1fr;
-    margin-top: 3em;
+    margin-top: 7em;
     margin-left: 3em;
     img {
       background-color: $m-red;
