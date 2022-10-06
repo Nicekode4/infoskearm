@@ -2,81 +2,82 @@
 @use "./fonts/fonts" as *;
 @import "../css/partials/news";
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: $roboto;
-    font-weight: 500;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $roboto;
+  font-weight: 500;
 }
 
-#container-main{
+#container-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#time {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+  img {
+    background-color: $m-red;
+    border-radius: 20%;
+  }
+  #timeSpan {
+    margin-left: 1em;
+  }
+}
+
+#dish {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+  img {
+    background-color: $m-red;
+    border-radius: 20%;
+  }
+  #dishSpan {
+    margin-left: 1em;
+  }
+}
+
+#bus {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+  img {
+    background-color: $m-red;
+    border-radius: 20%;
+  }
+  #busSpan {
+    margin-left: 1em;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 33% 33% 33%;
+  }
 }
 
-#time{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    margin-top: 3em;
-    margin-left: 3em;
-    img{
-        background-color: $m-red;
-        border-radius: 20%;
-    }
-    #timeSpan{
-        margin-left: 1em;
-    }
+#weather {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+  img {
+    background-color: $m-red;
+    border-radius: 20%;
+  }
+  #weatherSpan {
+    margin-left: 1em;
+  }
 }
 
-#dish{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    margin-top: 3em;
-    margin-left: 3em;
-    img{
-        background-color: $m-red;
-        border-radius: 20%;
-    }
-    #dishSpan{
-        margin-left: 1em;
-    }
+#schedule {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-#bus{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    margin-top: 3em;
-    margin-left: 3em;
-    img{
-        background-color: $m-red;
-        border-radius: 20%;
-    }
-    #busSpan{
-        margin-left: 1em;
-    }
-}
-
-#weather{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    margin-top: 3em;
-    margin-left: 3em;
-    img{
-        background-color: $m-red;
-        border-radius: 20%;
-    }
-    #weatherSpan{
-        margin-left: 1em;
-    }
-}
-
-
-#schedule{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-#news{
-    position: absolute;
-    bottom: 0;
+#news {
+  position: absolute;
+  bottom: 0;
 }
