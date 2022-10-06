@@ -70,6 +70,7 @@ marquee h4 {
   margin-left: 1em;
   display: grid;
   grid-template-columns: 15% 40% 60%;
+  margin-top: -2em;
 }
 
 #weather {
