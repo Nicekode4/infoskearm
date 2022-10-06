@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
-#news {
+marquee {
   background-color: #C26969;
   padding: 0.5em 0.5em;
 }
-#news h4 {
+marquee h4 {
   color: #fff;
   display: inline;
   padding: 1em 1em;
@@ -94,7 +94,7 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-#news {
+marquee {
   position: absolute;
   bottom: 0;
 }/*# sourceMappingURL=main.css.map */
