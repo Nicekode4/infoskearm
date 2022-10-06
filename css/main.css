@@ -1,3 +1,97 @@
-@use "./colors/colors" as *;
-@use "./fonts/fonts" as *;
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+marquee {
+  background-color: #C26969;
+  padding: 0.5em 0.5em;
+}
+marquee h4 {
+  color: #fff;
+  display: inline;
+  padding: 1em 1em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
+#container-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#time {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 3em;
+  margin-left: 3em;
+}
+#time img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#time #timeSpan {
+  margin-left: 1em;
+}
+
+#dish {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 7em;
+  margin-left: 3em;
+}
+#dish img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#dish #dishSpan {
+  margin-left: 1em;
+}
+
+#bus {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 7em;
+  margin-left: 3em;
+}
+#bus img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#bus #busSpan {
+  margin-left: 1em;
+  display: grid;
+  grid-template-columns: 15% 40% 60%;
+}
+
+#weather {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 7em;
+  margin-left: 3em;
+}
+#weather img {
+  background-color: #C26969;
+  border-radius: 20%;
+}
+#weather #weatherSpan {
+  margin-left: 1em;
+}
+
+#schedule {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+marquee {
+  position: absolute;
+  bottom: 0;
+}/*# sourceMappingURL=main.css.map */

@@ -5,32 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./js/time.js" defer></script>
+    <script src="./js/weather.js" defer></script>
+    <script src="./js/menu.js" defer></script>
     <script src="./js/bus.js" defer></script>
     <script type="module" src="./js/shcedule.js" defer></script>
+    <script src="./js/news.js" defer></script>
+    <script src="./js/weather.js" defer></script>
+    <link rel="stylesheet" href="./css/main.css" />
+
     <title>Infoskærm</title>
   </head>
   <body>
     <section id="container-main">
       <article id="left">
         <div id="time">
+          <img src="./Ikoner/clock.svg" alt="clock_icon" />
           <span id="timeSpan">
             <h2 id="date"></h2>
             <p id="clock"></p>
           </span>
-          <img src="./Ikoner/clock.svg" alt="clock_icon" />
         </div>
         <div id="dish">
-          <span>
-            <h2></h2>
-            <p id="meal"></p>
-          </span>
           <img src="./Ikoner/menu.svg" alt="menu_icon" />
+          <span id="dishSpan">
+            <h2>DAGENS RET</h2>
+            <p id="meal">Ingen ret at vise</p>
+          </span>
         </div>
+
         <div id="bus">
-          <span id="busSpan"></span>
           <img src="./Ikoner/buss.svg" alt="bus_icon" />
+          <span id="busSpan"></span>
         </div>
         <div id="weather">
+          <img id="weatherImg" src="" alt="Vejr" />
           <span id="weatherSpan"></span>
         </div>
       </article>
@@ -40,8 +48,9 @@
           <h2>Fag</h2>
           <h2>Lokale</h2>
         </div>
-        <div id="news"></div>
       </article>
+
+      <marquee id="newsM" scrollamount="10" scrolldelay="200"></marquee>
     </section>
   </body>
 </html>

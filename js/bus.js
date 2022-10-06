@@ -9,7 +9,6 @@ for (let index = 0; index < 6; index++) {
         })
         .then((data) => {
             //The data you wanna use
-            console.log(data);
             apiData = data.MultiDepartureBoard.Departure[index]
 
         })
@@ -19,10 +18,26 @@ for (let index = 0; index < 6; index++) {
         })
         .finally(() => {
             //When all is set and done
-            document.querySelector('#bus').innerHTML += `<p>${apiData.line}</p>
+
+
+if (apiData.rtTime == undefined) {
+    document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
 <p>${apiData.direction}</p>
-<p>${apiData.time}</p>
+<p style="padding: 0; margin: 0;">${apiData.time}</p>
 `
+
+    }
+    else
+    {
+        let a = `${apiData.rtTime}`.replace(':', '')
+        let b = `${apiData.time}`.replace(':', '')
+        console.log(a-b);
+        let delay = " + "  + parseInt(a-b)
+        document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
+<p>${apiData.direction}</p>
+<p style="padding: 0; margin: 0;">${apiData.time}<span style="color: red;" >${delay}</span></p>`
+    }
+    
         })
 
 

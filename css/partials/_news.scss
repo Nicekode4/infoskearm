@@ -1,0 +1,16 @@
+@use "../fonts/fonts" as *;
+@use "../colors/colors" as *;
+
+marquee {
+  background-color: $m-red;
+  padding: 0.5em 0.5em;
+
+  h4 {
+    color: $white;
+    display: inline;
+    padding: 1em 1em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+  }
+}
