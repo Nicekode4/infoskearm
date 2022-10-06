@@ -37,7 +37,7 @@ if (apiData.rtTime == undefined) {
         let delay = " + "  + parseInt(a-b)
         document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
 <p>${apiData.direction}</p>
-<p style="padding: 0; margin: 0;">${apiData.time}</p><span style="color: red;" >${delay}</span>`
+<p style="padding: 0; margin: 0;">${apiData.time}<span style="color: red;" >${delay}</span></p>`
     }
     
 console.log(typeof apiData.rtTime);

@@ -23,6 +23,9 @@
 #container-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 #time {
