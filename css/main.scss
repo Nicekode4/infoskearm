@@ -12,6 +12,9 @@
 #container-main{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 #time{
@@ -53,6 +56,8 @@
     }
     #busSpan{
         margin-left: 1em;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
     }
 }
 
