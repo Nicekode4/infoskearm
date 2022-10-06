@@ -52,5 +52,14 @@ getDate()
 
 setInterval(() => {
     today = new Date();
-    time.innerText = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds()
+    console.log(today.getHours());
+    if (today.getHours() < 10) {
+        time.innerText = "0" + today.getHours() + "." + today.getMinutes() + "." + today.getSeconds()
+    }
+    if (today.getMinutes() < 10) {
+        time.innerText = today.getHours() + "." + "0" + today.getMinutes() + "." + today.getSeconds()
+    }
+    if (today.getSeconds() < 10) {
+        time.innerText =  today.getHours() + "." + today.getMinutes() + "." + "0" + today.getSeconds()
+    }
 }, 1000);
