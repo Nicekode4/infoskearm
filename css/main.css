@@ -89,6 +89,7 @@ marquee h4 {
 #schedule {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 3em;
 }
 
 marquee {
