@@ -28,7 +28,7 @@
     } 
     else
     {
- fetch(url)
+ fetch(url2)
     .then(response => {
         return response.json();
         //parsing our data
