@@ -15,7 +15,6 @@ fetch(ApiEndpoint)
   })
   .then(data => {
 
-    // console.log(data);
 
     ApiData.push(...data.value);
   })
@@ -48,13 +47,11 @@ fetch(ApiEndpoint)
         return formatDate(new Date(), "day") === formatDate(activity.StartDate, "day") && !exClude.includes(activity.Team);
     }).map((obj) => {
         
-        console.log(obj)
         renderSchedule(obj);
     })
 })
 
 const renderSchedule = (obj) => {
-    // console.log(ApiData);
 
     const {Education, Room, StartDate, Subject, Team} = obj;
 
