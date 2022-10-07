@@ -66,6 +66,11 @@
     display: grid;
     grid-template-columns: 15% 40% 60%;
     margin-top: -2em;
+
+    span {
+      color: $m-red;
+      font-weight: bold;
+    }
   }
 }
 
