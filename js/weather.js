@@ -19,7 +19,7 @@ fetch(Endpoint)
   
     if(id >= 200 && id <= 232) { //Torden
       $().ready(function() {
-        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
+        $('#container-main').tubular({videoId: '0gUdnXIvW30', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
       });
       setTimeout(() => {
         if (document.querySelectorAll("iframe").length == 0) {
@@ -56,7 +56,7 @@ fetch(Endpoint)
     }else if(id >= 600 && id <= 622) { //Sne
       document.getElementById("weatherImg").src = "../Ikoner/cloud-snow.svg";
       $().ready(function() {
-        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
+        $('#container-main').tubular({videoId: 'uECDlpXNHaE', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
       });
       setTimeout(() => {
         if (document.querySelectorAll("iframe").length == 0) {
@@ -80,7 +80,7 @@ fetch(Endpoint)
     }else if(id == 800) { //Skyfrit
       document.getElementById("weatherImg").src = "../Ikoner/cloud-sun.svg";
       $().ready(function() {
-        $('#container-main').tubular({videoId: 'A_yLG2G09jw', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
+        $('#container-main').tubular({videoId: 'kpG7NzIeOuI', ratio: 16/9, repeat: true, start: 0, wrapperZIndex: 99}); // where idOfYourVideo is the YouTube ID.
       });
       setTimeout(() => {
         if (document.querySelectorAll("iframe").length == 0) {
