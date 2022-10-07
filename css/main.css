@@ -80,6 +80,10 @@ marquee h4 {
   grid-template-columns: 15% 40% 60%;
   margin-top: -2em;
 }
+#bus #busSpan span {
+  color: #C26969;
+  font-weight: bold;
+}
 
 #weather {
   display: grid;

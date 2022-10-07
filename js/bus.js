@@ -20,23 +20,22 @@ for (let index = 0; index < 6; index++) {
             //When all is set and done
 
 
-if (apiData.rtTime == undefined) {
-    document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
+            if (apiData.rtTime == undefined) {
+                document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
 <p>${apiData.direction}</p>
 <p style="padding: 0; margin: 0;">${apiData.time}</p>
 `
 
-    }
-    else
-    {
-        let a = `${apiData.rtTime}`.replace(':', '')
-        let b = `${apiData.time}`.replace(':', '')
-        let delay = " + "  + parseInt(a-b)
-        document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
+            }
+            else {
+                let a = `${apiData.rtTime}`.replace(':', '')
+                let b = `${apiData.time}`.replace(':', '')
+                let delay = " + " + parseInt(a - b)
+                document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
 <p>${apiData.direction}</p>
-<p style="padding: 0; margin: 0;">${apiData.time}<span style="color: red;" >${delay}</span></p>`
-    }
-    
+<p style="padding: 0; margin: 0;">${apiData.time}<span>${delay}</span></p>`
+            }
+
         })
 
 
