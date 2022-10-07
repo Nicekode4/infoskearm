@@ -122,6 +122,7 @@ function createDayRow(item) {
           </tr>`;
 }
 
+
 const convertTimeToSeconds = (time) => {
   return Math.round(new Date(time).getTime() / 1000);
 };

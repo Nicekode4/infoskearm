@@ -13,7 +13,6 @@ for (let index = 0; index < 7; index++) {
 			return response.json()
 		})
 		.then((data) => {
-			console.log(data);
 			newsData = data.items[index]
 		})
 		.catch((error) => {
