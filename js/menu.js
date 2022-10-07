@@ -4,9 +4,7 @@
     let idag = today.getDay()
     const meal = document.querySelector('#meal')
     let menu = JSON.parse(localStorage.getItem('canteen'))
-    console.log(today.getDay());
     if (idag == localStorage.getItem('today')) {
-        console.log(true);
         switch (idag) {
             case 1:
                 meal.innerText = menu.Days[0].Dish
@@ -30,7 +28,6 @@
     } 
     else
     {
-        console.log(false);
  fetch(url2)
     .then(response => {
         return response.json();
@@ -52,4 +49,3 @@
     }) 
     apiData2 = localStorage.getItem(STORAGE_KEY)
     } 
-console.log(menu);
