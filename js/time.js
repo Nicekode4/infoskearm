@@ -3,6 +3,12 @@ const date = document.querySelector('#date')
 const time = document.querySelector('#clock')
 let year = today.getYear() + 2000 - 100
 let todayDate = today.getDate()
+const getTime = new Intl.DateTimeFormat('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(today);
+
+
 
 function getDate() {
     switch (today.getMonth() + 1) {
@@ -51,27 +57,6 @@ function getDate() {
 getDate()
 
 setInterval(() => {
-    today = new Date();
-    console.log(today.getHours());
-    if (today.getHours() < 10) {
-        time.innerText = "0" + today.getHours() + "." + today.getMinutes() + "." + today.getSeconds()
-    }
-    else
-    {
-        time.innerText = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds() 
-    }
-    if (today.getMinutes() < 10) {
-        time.innerText = today.getHours() + "." + "0" + today.getMinutes() + "." + today.getSeconds()
-    }
-    else
-    {
-        time.innerText = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds() 
-    }
-    if (today.getSeconds() < 10) {
-        time.innerText =  today.getHours() + "." + today.getMinutes() + "." + "0" + today.getSeconds()
-    }
-    else
-    {
-        time.innerText = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds() 
-    }
+time.innerText = `${getTime}`
+    
 }, 1000);
