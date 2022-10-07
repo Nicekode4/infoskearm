@@ -11,7 +11,7 @@ marquee h4 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 400;
-  font-size: 2em;
+  font-size: 2.7em;
 }
 
 * {
@@ -34,12 +34,12 @@ marquee h4 {
   grid-template-columns: auto 1fr;
   margin-top: 3em;
   margin-left: 3em;
-  margin-bottom: 10em;
+  margin-bottom: 8vw;
 }
 #time img {
   background-color: #C26969;
   border-radius: 20%;
-  width: 5em;
+  width: 4.7vw;
 }
 #time #timeSpan {
   margin-left: 1em;
@@ -50,12 +50,12 @@ marquee h4 {
   grid-template-columns: auto 1fr;
   margin-top: 7em;
   margin-left: 3em;
-  margin-bottom: 10em;
+  margin-bottom: 8vw;
 }
 #dish img {
   background-color: #C26969;
   border-radius: 20%;
-  width: 5em;
+  width: 4.7vw;
 }
 #dish #dishSpan {
   margin-left: 1em;
@@ -66,7 +66,7 @@ marquee h4 {
   grid-template-columns: auto 1fr;
   margin-top: 7em;
   margin-left: 3em;
-  margin-bottom: 10em;
+  margin-bottom: 8vw;
 }
 #bus img {
   background-color: #C26969;
@@ -90,7 +90,7 @@ marquee h4 {
 #weather img {
   background-color: #C26969;
   border-radius: 20%;
-  width: 5em;
+  width: 4.7vw;
 }
 #weather #weatherSpan {
   margin-left: 1em;
@@ -125,5 +125,5 @@ p {
 h6 {
   font-size: 1.5vw;
   text-align: center;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.3vw;
 }/*# sourceMappingURL=main.css.map */
