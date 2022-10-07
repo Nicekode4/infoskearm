@@ -58,5 +58,4 @@ getDate()
 
 setInterval(() => {
 time.innerText = `${getTime}`
-    
 }, 1000);
