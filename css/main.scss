@@ -68,8 +68,12 @@
     margin-top: -2em;
 
     span {
-      color: $m-red;
+      background-color: $m-red;
       font-weight: bold;
+      color: $white;
+      margin: 1vw;
+      padding: 0.3vw;
+      border-radius: 20%;
     }
   }
 }

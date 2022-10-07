@@ -81,8 +81,12 @@ marquee h4 {
   margin-top: -2em;
 }
 #bus #busSpan span {
-  color: #C26969;
+  background-color: #C26969;
   font-weight: bold;
+  color: #fff;
+  margin: 1vw;
+  padding: 0.3vw;
+  border-radius: 20%;
 }
 
 #weather {
