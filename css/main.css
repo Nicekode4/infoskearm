@@ -101,7 +101,7 @@ marquee h4 {
   width: 4.7vw;
 }
 #weather #weatherSpan {
-  margin-left: 1em;
+  margin-left: 1vw;
   text-transform: capitalize;
 }
 
