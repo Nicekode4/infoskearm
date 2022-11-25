@@ -1,67 +1,132 @@
 import { formatDate } from "./formatDate.js";
 
-const ApiData = [];
+const root = document.getElementById("schedule");
+const max_activities = 8;
+const upDatePage = 1000;
 
-const ApiEndpoint = "https://iws.itcn.dk/techcollege/schedules?departmentcode=smed";
+const apiEndPoint =
+  "https://iws.itcn.dk/techcollege/Schedules?departmentCode=smed";
 
+const GroupDates = () => {
+  const ApiData = [];
 
+  let dagsDato = new Date();
 
+  let cur_time_stamp = Math.round(dagsDato.getTime() / 1000);
 
-fetch(ApiEndpoint)
+  let tomorrow_stamp = Math.round(dagsDato.setHours(0, 0, 0, 0) / 1000) + 86400;
 
-  .then(response => {
+  const fetchApiData = () => {
+    fetch(apiEndPoint)
+      .then((response) => response.json())
+      .then((data) => {
+        ApiData.push(...data.value);
+      })
+      .catch((e) => {
+        console.error(e);
+      })
 
-    return response.json();
-  })
-  .then(data => {
+      .finally(() => {
+        getActivities();
+      });
+  };
 
-    // console.log(data);
+  const getActivities = () => {
+    const inCludedEducations = [
+      "h0mg100122",
+      "gwe080122",
+      "biw100522",
+      "Grafisk Tekniker",
+      "Grafisk teknik.",
+    ];
 
-    ApiData.push(...data.value);
-  })
+    renderActivityTable(
+      ApiData.filter((activity) =>
+        inCludedEducations.includes(activity.Team)
+      ).sort((a, b) => {
+        if (a.StartDate === b.StartDate) {
+          return a.Education < b.Education ? -1 : 1;
+        } else {
+          return a.StartDate < b.StartDate ? -1 : 1;
+        }
+      })
+    );
+  };
 
-  .catch(error => {
+  const renderActivityTable = (data) => {
+    let html = `
+        <h2>Tid</h2>
+        <h2>Uddannelse</h2>
+        <h2>Fag</h2>
+        <h2>Lokale</h2>
+        <h2>Hold</h2>
+`;
 
-    console.error(error);
-  })
+    let arr_subjects = [];
 
-  .finally(() => {
-    const ltd100122e = "ltd100122e";
-    const h0mg010122f = "h0mg010122f";
-    const h1pd081122 = "h1pd081122";
-    const h1we010122 = "h1we010122";
-    const h1we080122 = "h1we080122";
-    const h0gr010122f = "h0gr010122f";
-    const gla080522 = "gla080522";
-    const h2gr090122 = "h2gr090122";
-    const ggr080122 = "ggr080122";
-    const ggk080122 = "ggk080122";
+    arr_subjects.push(
+      ...data.filter(
+        (obj) =>
+          convertTimeToSeconds(obj.StartDate) + 3600 >= cur_time_stamp &&
+          convertTimeToSeconds(obj.StartDate) < tomorrow_stamp
+      )
+    );
 
-    const exClude = [ggk080122, ltd100122e, h0mg010122f, h1pd081122, h1we010122, h1we080122, h0gr010122f, gla080522, h2gr090122, ggr080122];
+    let arr_nextday_subjects = [];
+    arr_nextday_subjects.push(
+      ...data.filter(
+        (obj) => convertTimeToSeconds(obj.StartDate) >= tomorrow_stamp
+      )
+    );
 
-    ApiData.sort((a, b) => {
-        /** sorting incoming data by date */
-        if (a.StartDate < b.StartDate) return -1;
-        if (b.StartDate < a.StartDate) return 1;
-        return 0;
-    }).filter((activity) => {
-        return formatDate(new Date(), "day") === formatDate(activity.StartDate, "day") && !exClude.includes(activity.Team);
-    }).map((obj) => {
-        
-        console.log(obj)
-        renderSchedule(obj);
-    })
-})
+    if (arr_nextday_subjects.length) {
+      let next_day_friendly = new Date(
+        arr_nextday_subjects[0].StartDate
+      ).toLocaleDateString("da-DK", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+      });
+      arr_subjects.push({ day: next_day_friendly });
+      arr_subjects.push(...arr_nextday_subjects);
+    }
 
-const renderSchedule = (obj) => {
-    // console.log(ApiData);
+    arr_subjects.slice(0, max_activities).map((obj) => {
+      if (obj.Team) {
+        html += createRow(obj);
+      } else {
+        html += createDayRow(obj);
+      }
+    });
 
-    const {Education, Room, StartDate, Subject, Team} = obj;
+    html += `</tbody></table>`;
+    root.innerHTML = html;
+  };
 
-    document.getElementById('schedule').innerHTML +=`
-    <h6>${formatDate(StartDate,"time")}</h6>
-    <h6>${Education}</h6>
-    <h6>${Subject}</h6>
-    <h6>${Room}</h6>
-    `
+  fetchApiData();
+};
+
+const createRow = (obj) => {
+  return `
+      <h6>${formatDate(obj.StartDate, "time")}</h6>
+      <h6>${obj.Education}</h6>
+      <h6>${obj.Subject}</h6>
+      <h6 >${obj.Room}</h6>
+      <h6>${obj.Team}</h6>
+      `;
+};
+
+function createDayRow(item) {
+  return `<tr id="nextDay">
+            <td colspan="5">${item.day}</td>
+          </tr>`;
 }
+
+
+const convertTimeToSeconds = (time) => {
+  return Math.round(new Date(time).getTime() / 1000);
+};
+
+setInterval(() => {
+  GroupDates();
+}, upDatePage);

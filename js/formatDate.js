@@ -17,6 +17,8 @@ export const formatDate = (d, val) => {
     year: "numeric",
     month: "long",
     day: "numeric",
+    hour: '2-digit',
+    minute: '2-digit'
     };
     
     const toLocale = date.toLocaleDateString("da-DK", options);
