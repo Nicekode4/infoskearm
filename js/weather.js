@@ -10,7 +10,6 @@ fetch(Endpoint)
     TempRN = WeatherData.main.temp
     id = WeatherData.weather[0].id
     //id = 800;
-    console.log(id);
   })
   .catch(error => {
     console.error(error);
