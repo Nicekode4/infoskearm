@@ -26,12 +26,15 @@ for (let index = 0; index < 6; index++) {
 <p style="padding: 0; margin: 0;">${apiData.time}</p>
 `
 
-            }
-            else {
-                let a = `${apiData.rtTime}`.replace(':', '')
-                let b = `${apiData.time}`.replace(':', '')
-                let delay = " + " + parseInt(a - b)
-                document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
+    }
+    else
+    {
+        let a = `${apiData.rtTime}`.replace(':', '')
+        let b = `${apiData.time}`.replace(':', '')
+        
+        let delay = " + "  + new Date(parseInt(a * 1000-b * 1000)).getSeconds()
+        console.log(parseInt(b-a ));
+        document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
 <p>${apiData.direction}</p>
 <p style="padding: 0; margin: 0;">${apiData.time}<span>${delay}</span></p>`
             }
@@ -40,3 +43,5 @@ for (let index = 0; index < 6; index++) {
 
 
 }
+
+console.log(new Date(3));
