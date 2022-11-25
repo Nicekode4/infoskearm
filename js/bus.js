@@ -31,8 +31,9 @@ if (apiData.rtTime == undefined) {
     {
         let a = `${apiData.rtTime}`.replace(':', '')
         let b = `${apiData.time}`.replace(':', '')
-        console.log(a-b);
-        let delay = " + "  + parseInt(a-b)
+        
+        let delay = " + "  + new Date(parseInt(a * 1000-b * 1000)).getSeconds()
+        console.log(parseInt(b-a ));
         document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
 <p>${apiData.direction}</p>
 <p style="padding: 0; margin: 0;">${apiData.time}<span style="color: red;" >${delay}</span></p>`
@@ -42,3 +43,5 @@ if (apiData.rtTime == undefined) {
 
 
 }
+
+console.log(new Date(3));
