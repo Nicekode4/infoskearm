@@ -1,132 +1,97 @@
-import { formatDate } from "./formatDate.js";
-
 const root = document.getElementById("schedule");
 const max_activities = 8;
+let count = 0
+let timeStr;
 const upDatePage = 1000;
+let currentTimes = new Date()
+let apidata = []
+let tableData = []
 
+//The teams that should not be shown on infoboard
+const Teams = [
+  "ggr080122",
+  "h0gr010122f",
+  "h4gr110122",
+  "biw100522",
+  "Grafisk Tekniker",
+  "Grafisk teknik."
+];
 const apiEndPoint =
   "https://iws.itcn.dk/techcollege/Schedules?departmentCode=smed";
 
-const GroupDates = () => {
-  const ApiData = [];
+  fetch(apiEndPoint)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log('Success:', data);
+    apidata = data.value
+    apidata.sort((a, b) => {
+      let aDate = new Date(a.StartDate).getHours()
+      let bDate = new Date(b.StartDate).getHours()
+return  aDate - bDate
+    })
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 
-  let dagsDato = new Date();
+  setTimeout(() => {
+    let binary = 0
 
-  let cur_time_stamp = Math.round(dagsDato.getTime() / 1000);
-
-  let tomorrow_stamp = Math.round(dagsDato.setHours(0, 0, 0, 0) / 1000) + 86400;
-
-  const fetchApiData = () => {
-    fetch(apiEndPoint)
-      .then((response) => response.json())
-      .then((data) => {
-        ApiData.push(...data.value);
-      })
-      .catch((e) => {
-        console.error(e);
-      })
-
-      .finally(() => {
-        getActivities();
-      });
-  };
-
-  const getActivities = () => {
-    const inCludedEducations = [
-      "h0mg100122",
-      "gwe080122",
-      "biw100522",
-      "Grafisk Tekniker",
-      "Grafisk teknik.",
-    ];
-
-    renderActivityTable(
-      ApiData.filter((activity) =>
-        inCludedEducations.includes(activity.Team)
-      ).sort((a, b) => {
-        if (a.StartDate === b.StartDate) {
-          return a.Education < b.Education ? -1 : 1;
-        } else {
-          return a.StartDate < b.StartDate ? -1 : 1;
+    apidata.forEach(element => {
+      
+      let DaDate = new Date(element.StartDate)
+      let hourOfClass = unixConvert(DaDate) * 1000
+      if (DaDate.getHours() >= currentTimes.getHours() && DaDate.getDate() === currentTimes.getDate()) {
+        if (element.Subject !== "") {
+          if (!Teams.includes(element.Team)) {
+            if (count <= max_activities) {
+              TheTime(element.StartDate)
+              root.innerHTML += `
+            <p>${timeStr}</p>
+            <p>${element.Education}</p>
+            <p>${element.Subject}</p>
+            <p>${element.Room}</p>
+            <p>${element.Team}</p>
+            `
+            count++
+          } else {
+            
+          }
+          }
+          }
         }
-      })
-    );
-  };
 
-  const renderActivityTable = (data) => {
-    let html = `
-        <h2>Tid</h2>
-        <h2>Uddannelse</h2>
-        <h2>Fag</h2>
-        <h2>Lokale</h2>
-        <h2>Hold</h2>
-`;
+        })
+  }, 1000);
 
-    let arr_subjects = [];
+  function unixConvert(time) {
+    const dateStr = `${time}`;
 
-    arr_subjects.push(
-      ...data.filter(
-        (obj) =>
-          convertTimeToSeconds(obj.StartDate) + 3600 >= cur_time_stamp &&
-          convertTimeToSeconds(obj.StartDate) < tomorrow_stamp
-      )
-    );
-
-    let arr_nextday_subjects = [];
-    arr_nextday_subjects.push(
-      ...data.filter(
-        (obj) => convertTimeToSeconds(obj.StartDate) >= tomorrow_stamp
-      )
-    );
-
-    if (arr_nextday_subjects.length) {
-      let next_day_friendly = new Date(
-        arr_nextday_subjects[0].StartDate
-      ).toLocaleDateString("da-DK", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-      });
-      arr_subjects.push({ day: next_day_friendly });
-      arr_subjects.push(...arr_nextday_subjects);
-    }
-
-    arr_subjects.slice(0, max_activities).map((obj) => {
-      if (obj.Team) {
-        html += createRow(obj);
-      } else {
-        html += createDayRow(obj);
-      }
-    });
-
-    html += `</tbody></table>`;
-    root.innerHTML = html;
-  };
-
-  fetchApiData();
-};
-
-const createRow = (obj) => {
-  return `
-      <h6>${formatDate(obj.StartDate, "time")}</h6>
-      <h6>${obj.Education}</h6>
-      <h6>${obj.Subject}</h6>
-      <h6 >${obj.Room}</h6>
-      <h6>${obj.Team}</h6>
-      `;
-};
-
-function createDayRow(item) {
-  return `<tr id="nextDay">
-            <td colspan="5">${item.day}</td>
-          </tr>`;
+    const date = new Date(dateStr);
+    
+    const timestampInMs = date.getTime();
+    
+    const unixTimestamp = Math.floor(date.getTime() / 1000);
+    return unixTimestamp
 }
 
+function TheTime(currentTime) {
+  currentTime = new Date(currentTime)
+  console.log(currentTime);
+  if (currentTime.getHours() < 10) {
+  timeStr = "0" + currentTime.getHours() + "." + currentTime.getMinutes()
+}
+else
+{
+  timeStr = currentTime.getHours() + "." + currentTime.getMinutes() 
+}
+if (currentTime.getMinutes() < 10) {
+  timeStr = currentTime.getHours() + "." + "0" + currentTime.getMinutes()
+}
+else
+{
+  timeStr = currentTime.getHours() + "." + currentTime.getMinutes() 
+}
 
-const convertTimeToSeconds = (time) => {
-  return Math.round(new Date(time).getTime() / 1000);
-};
-
-setInterval(() => {
-  GroupDates();
-}, upDatePage);
+return timeStr
+}
