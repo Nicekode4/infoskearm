@@ -10,7 +10,7 @@ function getDate() {
             date.innerText = todayDate + ". Januar " + year
             break;
             case 2:
-                date.innerText = todayDate + ". Febuar " + year
+                date.innerText = todayDate + ". Februar " + year
                 break;
                 case 3:
                     date.innerText = todayDate + ". Marts " + year

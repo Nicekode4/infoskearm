@@ -23,7 +23,7 @@ for (let index = 0; index < 6; index++) {
             if (apiData.rtTime == undefined) {
                 document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
 <p>${apiData.direction}</p>
-<p style="padding: 0; margin: 0;">${apiData.time}</p>
+<p style="padding: 0; margin: 0;">${apiData.time}
 `
 
     }
@@ -34,6 +34,7 @@ for (let index = 0; index < 6; index++) {
         
         let delay = " + "  + new Date(parseInt(a * 1000-b * 1000)).getSeconds()
         document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
+        
 <p>${apiData.direction}</p>
 <p style="padding: 0; margin: 0;">${apiData.time}<span>${delay}</span></p>`
             }

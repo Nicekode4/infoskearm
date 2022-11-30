@@ -7,6 +7,7 @@
   padding: 0;
   font-family: $roboto;
   font-weight: 500;
+  // border: solid 1px red;
 }
 
 #container-main {
@@ -15,13 +16,15 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  #left{
+    padding-left: 3vw;
+  }
 }
 
 #time {
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 3vw;
-  margin-left: 3vw;
   margin-bottom: 8vw;
   img {
     background-color: $m-red;
@@ -37,7 +40,6 @@
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 7vw;
-  margin-left: 3vw;
   margin-bottom: 8vw;
   img {
     background-color: $m-red;
@@ -53,7 +55,6 @@
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 7vw;
-  margin-left: 3vw;
   margin-bottom: 7vw;
   img {
     background-color: $m-red;
@@ -66,15 +67,19 @@
     display: grid;
     grid-template-columns: 15% 40% 60%;
     margin-top: -2vw;
-
-    span {
+    p{
+      display: flex;
+     span {
       font-weight: bold;
       color: $m-red;
-      margin: 1vw;
-      padding: 0.3vw;
+      margin: 0 1vw;
+      padding: 0.2vw;
+      align-self: center;
       border-radius: 20%;
       font-size: 1.1vw;
+    } 
     }
+    
   }
 }
 
@@ -82,7 +87,6 @@
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 7em;
-  margin-left: 3em;
   img {
     background-color: $m-red;
     border-radius: 20%;

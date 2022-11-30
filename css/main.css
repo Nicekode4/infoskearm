@@ -28,12 +28,14 @@ marquee h4 {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+#container-main #left {
+  padding-left: 3vw;
+}
 
 #time {
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 3vw;
-  margin-left: 3vw;
   margin-bottom: 8vw;
 }
 #time img {
@@ -49,7 +51,6 @@ marquee h4 {
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 7vw;
-  margin-left: 3vw;
   margin-bottom: 8vw;
 }
 #dish img {
@@ -65,7 +66,6 @@ marquee h4 {
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 7vw;
-  margin-left: 3vw;
   margin-bottom: 7vw;
 }
 #bus img {
@@ -80,11 +80,15 @@ marquee h4 {
   grid-template-columns: 15% 40% 60%;
   margin-top: -2vw;
 }
-#bus #busSpan span {
+#bus #busSpan p {
+  display: flex;
+}
+#bus #busSpan p span {
   font-weight: bold;
   color: #C26969;
-  margin: 1vw;
-  padding: 0.3vw;
+  margin: 0 1vw;
+  padding: 0.2vw;
+  align-self: center;
   border-radius: 20%;
   font-size: 1.1vw;
 }
@@ -93,7 +97,6 @@ marquee h4 {
   display: grid;
   grid-template-columns: auto 1fr;
   margin-top: 7em;
-  margin-left: 3em;
 }
 #weather img {
   background-color: #C26969;
