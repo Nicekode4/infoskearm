@@ -5,3 +5,17 @@ const inCludedEducations = [
       "Grafisk Tekniker",
       "Grafisk teknik.",
     ];
+
+    
+              console.log(TheTime(element.StartDate));
+            root.innerHTML += `
+          <p>${currentTimes.getDate()}${timeStr}</p>
+          <p>${element.Education}</p>
+          <p>${element.Subject}</p>
+          <p>${element.Room}</p>
+          <p>${element.Team}</p>
+          `
+          count++
+
+
+

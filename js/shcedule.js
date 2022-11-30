@@ -3,16 +3,18 @@ const max_activities = 8;
 let count = 0
 let timeStr;
 const upDatePage = 1000;
-let currentTimey = new Date()
+let currentTimes = new Date()
 let apidata = []
+let tableData = []
+
+//The teams that should not be shown on infoboard
 const Teams = [
-  "h0mg100122",
-  "gwe080122",
+  "ggr080122",
+  "h0gr010122f",
+  "h4gr110122",
   "biw100522",
   "Grafisk Tekniker",
-  "Grafisk teknik.",
-  "Mediegrafiker",
-  "Webudvikler"
+  "Grafisk teknik."
 ];
 const apiEndPoint =
   "https://iws.itcn.dk/techcollege/Schedules?departmentCode=smed";
@@ -22,36 +24,44 @@ const apiEndPoint =
   .then((data) => {
     console.log('Success:', data);
     apidata = data.value
+    apidata.sort((a, b) => {
+      let aDate = new Date(a.StartDate).getHours()
+      let bDate = new Date(b.StartDate).getHours()
+return  aDate - bDate
+    })
   })
   .catch((error) => {
     console.error('Error:', error);
   });
 
   setTimeout(() => {
-    console.log(apidata);
+    let binary = 0
+
     apidata.forEach(element => {
       
       let DaDate = new Date(element.StartDate)
       let hourOfClass = unixConvert(DaDate) * 1000
-      let currentTimes = new Date()
-      if (DaDate.getHours() >= currentTimes.getHours() && DaDate.getHours() + 1 >= currentTimes.getHours() && DaDate.getDay() === currentTimes.getDay()) {
-        if (count <= max_activities) {
-          console.log(TheTime(element.StartDate));
-        root.innerHTML += `
-      <p>${timeStr}</p>
-      <p>${element.Education}</p>
-      <p>${element.Subject}</p>
-      <p>${element.Room}</p>
-      <p>${element.Team}</p>
-      `
-      count++
-      } else {
-        
-      }
-
+      if (DaDate.getHours() >= currentTimes.getHours() && DaDate.getDate() === currentTimes.getDate()) {
+        if (element.Subject !== "") {
+          if (!Teams.includes(element.Team)) {
+            if (count <= max_activities) {
+              TheTime(element.StartDate)
+              root.innerHTML += `
+            <p>${timeStr}</p>
+            <p>${element.Education}</p>
+            <p>${element.Subject}</p>
+            <p>${element.Room}</p>
+            <p>${element.Team}</p>
+            `
+            count++
+          } else {
+            
+          }
+          }
+          }
         }
-        
-    });
+
+        })
   }, 1000);
 
   function unixConvert(time) {
@@ -85,4 +95,3 @@ else
 
 return timeStr
 }
-
