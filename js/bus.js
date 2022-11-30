@@ -1,5 +1,6 @@
 const url = "https://xmlopen.rejseplanen.dk/bin/rest.exe/multiDepartureBoard?id1=851400602&id2=851973402&rttime&format=json&useBus=1"
 let apiData;
+let DaDate = "11:00"
 
 for (let index = 0; index < 6; index++) {
     fetch(url)
@@ -29,10 +30,13 @@ for (let index = 0; index < 6; index++) {
     }
     else
     {
-        let a = `${apiData.rtTime}`.replace(':', '')
-        let b = `${apiData.time}`.replace(':', '')
-        
-        let delay = " + "  + new Date(parseInt(a * 1000-b * 1000)).getSeconds()
+
+        let a = unixConvert(apiData.rtTime)
+    
+        let b = unixConvert(apiData.time)
+        console.log(b);
+
+        let delay = " + "  + new Date(parseInt(a * 1000-b * 1000)).getMinutes()
         document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
         
 <p>${apiData.direction}</p>
@@ -41,5 +45,17 @@ for (let index = 0; index < 6; index++) {
 
         })
 
+        function unixConvert(time) {
+            const dateStr = `1970-01-01 ${time}`;
+
+            const date = new Date(dateStr);
+            console.log(date); // 👉️ Wed Jun 22 2022
+            
+            const timestampInMs = date.getTime();
+            
+            const unixTimestamp = Math.floor(date.getTime() / 1000);
+            console.log(unixTimestamp);
+            return unixTimestamp
+        }
 
 }
