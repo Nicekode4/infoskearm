@@ -55,11 +55,11 @@ const GroupDates = () => {
 
   const renderActivityTable = (data) => {
     let html = `
-        <h2>Tid</h2>
-        <h2>Uddannelse</h2>
-        <h2>Fag</h2>
-        <h2>Lokale</h2>
-        <h2>Hold</h2>
+        ${cellWrapper("Tid", "", "h2")}
+        ${cellWrapper("Uddannelse", "", "h2")}
+        ${cellWrapper("Fag", "", "h2")}
+        ${cellWrapper("Lokale", "", "h2")}
+        ${cellWrapper("Hold", "", "h2")}
 `;
 
     let arr_subjects = [];
@@ -108,18 +108,17 @@ const GroupDates = () => {
 
 const createRow = (obj) => {
   return `
-      <h6>${formatDate(obj.StartDate, "time")}</h6>
-      <h6>${obj.Education}</h6>
-      <h6>${obj.Subject}</h6>
-      <h6 >${obj.Room}</h6>
-      <h6>${obj.Team}</h6>
+      ${cellWrapper(formatDate(obj.StartDate, "time", "h6"))}
+      ${cellWrapper(obj.Education, "" , "h6")}
+      ${cellWrapper(obj.Subject, "" , "h6")}
+      ${cellWrapper(obj.Room, "" , "h6")}
+      ${cellWrapper(obj.Team, "" , "h6")}
       `;
 };
 
 function createDayRow(item) {
-  return `<tr id="nextDay">
-            <td colspan="5">${item.day}</td>
-          </tr>`;
+  return`
+          ${cellWrapper(item.day, "tomorrow")}`
 }
 
 
@@ -130,3 +129,7 @@ const convertTimeToSeconds = (time) => {
 setInterval(() => {
   GroupDates();
 }, upDatePage);
+
+const cellWrapper = (str, strClass, headingSize) => {
+  return `<div ${strClass ? 'class= '+strClass+'': ''}><${headingSize}>${str}</${headingSize}></div>`
+} 
