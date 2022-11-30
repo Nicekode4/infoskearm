@@ -1,0 +1,7 @@
+const inCludedEducations = [
+      "h0mg100122",
+      "gwe080122",
+      "biw100522",
+      "Grafisk Tekniker",
+      "Grafisk teknik.",
+    ];

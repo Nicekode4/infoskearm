@@ -15,13 +15,12 @@
       src="js/jquery.tubular.1.0.js"
       defer
     ></script>
-    <script src="./js/time.js" defer></script>
-    <script src="./js/weather.js" defer></script>
+    <script type="module" src="./js/time.js" defer></script>
     <script src="./js/menu.js" defer></script>
     <script src="./js/bus.js" defer></script>
     <script type="module" src="./js/shcedule.js" defer></script>
     <script src="./js/news.js" defer></script>
-    <script src="./js/weather.js" defer></script>
+    <!-- <script src="./js/weather.js" defer></script> -->
     <script src="./js/shcedule.js" defer></script>
     <link rel="stylesheet" href="./css/main.css" />
 
@@ -55,7 +54,13 @@
         </div>
       </article>
       <article id="right">
-        <div id="schedule"></div>
+        <div id="schedule">
+          <h2>Tid</h2>
+          <h2>Uddannelse</h2>
+          <h2>Fag</h2>
+          <h2>Lokale</h2>
+          <h2>Hold</h2>
+        </div>
       </article>
 
       <marquee id="newsM" scrollamount="20" scrolldelay="150"></marquee>
