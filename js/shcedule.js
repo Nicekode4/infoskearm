@@ -1,20 +1,15 @@
 const root = document.getElementById("schedule");
-const max_activities = 8;
+const max_activities = 20;
 let count = 0
+const refreshInterval = 3600000 //1 Hour
 let timeStr;
-const upDatePage = 1000;
 let currentTimes = new Date()
 let apidata = []
 let tableData = []
 
 //The teams that should not be shown on infoboard
 const Teams = [
-  "ggr080122",
-  "h0gr010122f",
-  "h4gr110122",
-  "biw100522",
-  "Grafisk Tekniker",
-  "Grafisk teknik."
+  "gel080322" //Elektriker
 ];
 const apiEndPoint =
   "https://iws.itcn.dk/techcollege/Schedules?departmentCode=smed";
@@ -35,34 +30,39 @@ return  aDate - bDate
   });
 
   setTimeout(() => {
-    let binary = 0
-
-    apidata.forEach(element => {
-      
-      let DaDate = new Date(element.StartDate)
-      let hourOfClass = unixConvert(DaDate) * 1000
-      if (DaDate.getHours() >= currentTimes.getHours() && DaDate.getDate() === currentTimes.getDate()) {
-        if (element.Subject !== "") {
-          if (!Teams.includes(element.Team)) {
-            if (count <= max_activities) {
-              TheTime(element.StartDate)
-              root.innerHTML += `
-            <p>${timeStr}</p>
-            <p>${element.Education}</p>
-            <p>${element.Subject}</p>
-            <p>${element.Room}</p>
-            <p>${element.Team}</p>
-            `
-            count++
-          } else {
-            
-          }
-          }
-          }
-        }
-
-        })
+    getSchedule()  
   }, 1000);
+
+  interval = setInterval(() => {
+    getSchedule()
+  }, );
+function getSchedule() {
+  apidata.forEach(element => {
+      
+    let DaDate = new Date(element.StartDate)
+    let hourOfClass = unixConvert(DaDate) * 1000
+    if (DaDate.getHours() >= currentTimes.getHours() && DaDate.getDate() === currentTimes.getDate()) {
+      if (element.Subject !== "") {
+        if (!Teams.includes(element.Team)) {
+          if (count <= max_activities) {
+            TheTime(element.StartDate)
+            root.innerHTML += `
+          <p>${timeStr}</p>
+          <p>${element.Education}</p>
+          <p>${element.Subject}</p>
+          <p>${element.Room}</p>
+          <p>${element.Team}</p>
+          `
+          count++
+        } else {
+          
+        }
+        }
+        }
+      }
+
+      })
+}
 
   function unixConvert(time) {
     const dateStr = `${time}`;

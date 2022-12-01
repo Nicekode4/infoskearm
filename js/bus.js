@@ -11,7 +11,11 @@ for (let index = 0; index < 6; index++) {
         .then((data) => {
             //The data you wanna use
             apiData = data.MultiDepartureBoard.Departure[index]
-
+            apiData.sort((a, b) => {
+                let aDate = new Date(a.time).getHours()
+                let bDate = new Date(b.time).getHours()
+          return  aDate - bDate
+              })
         })
         .catch((error) => {
             //If theres an error
