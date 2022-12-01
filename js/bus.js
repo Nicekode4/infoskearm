@@ -11,7 +11,6 @@ for (let index = 0; index < 6; index++) {
         .then((data) => {
             //The data you wanna use
             apiData = data.MultiDepartureBoard.Departure[index]
-
         })
         .catch((error) => {
             //If theres an error
