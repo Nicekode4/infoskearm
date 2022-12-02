@@ -75,7 +75,6 @@ function getSchedule() {
 
 function TheTime(currentTime) {
   currentTime = new Date(currentTime)
-  console.log(currentTime);
   if (currentTime.getHours() < 10) {
   timeStr = "0" + currentTime.getHours() + "." + currentTime.getMinutes()
 }
