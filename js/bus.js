@@ -1,6 +1,5 @@
 const url = "https://xmlopen.rejseplanen.dk/bin/rest.exe/multiDepartureBoard?id1=851400602&id2=851973402&rttime&format=json&useBus=1"
 let apiData;
-let DaDate = "11:00"
 
 for (let index = 0; index < 6; index++) {
     fetch(url)
@@ -23,7 +22,7 @@ for (let index = 0; index < 6; index++) {
             if (apiData.rtTime == undefined) {
                 document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
 <p>${apiData.direction}</p>
-<p style="padding: 0; margin: 0;">${apiData.time}
+<p style="padding: 0; margin: 0;">${apiData.time}</p>
 `
 
     }

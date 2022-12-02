@@ -12,13 +12,14 @@
 
 #container-main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 45% 50%;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   #left{
     padding-left: 3vw;
   }
+
 }
 
 #time {
@@ -65,15 +66,15 @@
   #busSpan {
     margin-left: 1vw;
     display: grid;
-    grid-template-columns: 15% 40% 60%;
+    grid-template-columns: 15% 58% 40%;
     margin-top: -2vw;
     p{
       display: flex;
      span {
       font-weight: bold;
-      color: $m-red;
-      margin: 0 1vw;
-      padding: 0.2vw;
+      color: rgba(255, 0, 0, 0.633);
+      margin: 0.1vw;
+      padding: 0.1vw;
       align-self: center;
       border-radius: 20%;
       font-size: 1.1vw;
@@ -100,13 +101,14 @@
 
 #schedule {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  margin-top: 3em;
-  margin-left: -10em;
+  grid-template-columns: 1fr 1fr 25% 1fr 1fr;
+  margin-top: 3vw;
+  margin-right: 10em;
 
   h2 {
+    margin-right: 2em;
     margin-bottom: 0.7em;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
   }
 }
