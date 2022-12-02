@@ -53,24 +53,24 @@ getDate()
 setInterval(() => {
     today = new Date();
     if (today.getHours() < 10) {
-        time.innerText = "0" + today.getHours() + "." + today.getMinutes() + "." + today.getSeconds()
+        time.innerText = "0" + today.getHours() + "." + today.getMinutes()
     }
     else
     {
-        time.innerText = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds() 
+        time.innerText = today.getHours() + "." + today.getMinutes() 
     }
     if (today.getMinutes() < 10) {
-        time.innerText = today.getHours() + "." + "0" + today.getMinutes() + "." + today.getSeconds()
+        time.innerText = today.getHours() + "." + "0" + today.getMinutes()
     }
     else
     {
-        time.innerText = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds() 
+        time.innerText = today.getHours() + "." + today.getMinutes() 
     }
     if (today.getSeconds() < 10) {
-        time.innerText =  today.getHours() + "." + today.getMinutes() + "." + "0" + today.getSeconds()
+        time.innerText =  today.getHours() + "." + today.getMinutes()
     }
     else
     {
-        time.innerText = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds() 
+        time.innerText = today.getHours() + "." + today.getMinutes() 
     }
 }, 1000);
