@@ -66,11 +66,4 @@ setInterval(() => {
     {
         time.innerText = today.getHours() + "." + today.getMinutes() 
     }
-    if (today.getSeconds() < 10) {
-        time.innerText =  today.getHours() + "." + today.getMinutes()
-    }
-    else
-    {
-        time.innerText = today.getHours() + "." + today.getMinutes() 
-    }
 }, 1000);
