@@ -1,5 +1,5 @@
 const root = document.getElementById("schedule");
-const max_activities = 15;
+const max_activities = 20;
 let count = 0
 const refreshInterval = 3600000 //1 Hour
 let timeStr;
@@ -35,7 +35,7 @@ return  aDate - bDate
 
   interval = setInterval(() => {
     getSchedule()
-  }, );
+  }, refreshInterval);
 function getSchedule() {
   apidata.forEach(element => {
       
