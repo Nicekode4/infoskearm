@@ -19,6 +19,7 @@
   #left{
     padding-left: 3vw;
   }
+
 }
 
 #time {
@@ -101,7 +102,7 @@
 #schedule {
   display: grid;
   grid-template-columns: 1fr 1fr 25% 1fr 1fr;
-  margin-top: 3em;
+  margin-top: 3vw;
   margin-right: 10em;
 
   h2 {
