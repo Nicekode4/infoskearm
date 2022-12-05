@@ -1,25 +1,43 @@
     const url2 = 'https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?format=json'
     const STORAGE_KEY = "canteen"
     let apiData2;
+    let MyArray;
+    let retten;
     let idag = new Date().getDay()
     const meal = document.querySelector('#meal')
+    const meal2 = document.querySelector('#meal2')
     let menu = JSON.parse(localStorage.getItem('canteen'))
     if (idag == localStorage.getItem('today')) {
         switch (idag) {
             case 1:
-                meal.innerText = menu.Days[0].Dish
+                retten = menu.Days[0].Dish
+                MyArray = retten.split('-')
+                meal.innerText = MyArray[0]
+                meal2.innerText = MyArray[1]
                 break;
                 case 2:
-                    meal.innerText = menu.Days[1].Dish
+                    retten = menu.Days[1].Dish
+                     MyArray = retten.split('-')
+                    meal.innerText = MyArray[0]
+                    meal2.innerText = MyArray[1]
                     break;
                     case 3:
-                meal.innerText = menu.Days[2].Dish
+                        retten = menu.Days[2].Dish
+                        MyArray = retten.split('-')
+                       meal.innerText = MyArray[0]
+                       meal2.innerText = MyArray[1]
                 break;
                 case 4:
-                meal.innerText = menu.Days[3].Dish
+                    retten = menu.Days[3].Dish
+                    MyArray = retten.split('-')
+                   meal.innerText = MyArray[0]
+                   meal2.innerText = MyArray[1]
                 break;
                 case 5:
-                meal.innerText = menu.Days[4].Dish
+                    retten = menu.Days[4].Dish
+                    MyArray = retten.split('-')
+                   meal.innerText = MyArray[0]
+                   meal2.innerText = MyArray[1]
                 break;
         
             default:
@@ -45,7 +63,10 @@
     localStorage.setItem('today', idag)
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(apiData2))
     
-    meal.innerText = apiData2.Days[idag - 1].Dish
+    retten = apiData2.Days[idag - 1].Dish
+    MyArray = retten.split('-')
+   meal.innerText = MyArray[0]
+   meal2.innerText = MyArray[1]
         
     }) 
     apiData2 = localStorage.getItem(STORAGE_KEY)
