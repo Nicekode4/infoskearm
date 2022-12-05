@@ -41,7 +41,7 @@ function getSchedule() {
       
     let DaDate = new Date(element.StartDate)
     let hourOfClass = unixConvert(DaDate) * 1000
-    if (DaDate.getHours() >= currentTimes.getHours() && DaDate.getDate() === currentTimes.getDate()) {
+    if (DaDate.getHours() > currentTimes.getHours() - 1 && DaDate.getHours() < currentTimes.getHours() + 3 && DaDate.getDate() === currentTimes.getDate()) {
       if (!Teams.includes(element.Team)) {
         if (count <= max_activities) {
           TheTime(element.StartDate)

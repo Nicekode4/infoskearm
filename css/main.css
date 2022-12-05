@@ -110,15 +110,21 @@ marquee h4 {
 
 #schedule {
   display: grid;
-  grid-template-columns: 1fr 1fr 25% 1fr 1fr;
+  grid-template-columns: 1fr 1fr 25% 1fr 40%;
   margin-top: 3vw;
   margin-right: 10em;
+  width: 100%;
 }
 #schedule h2 {
   margin-right: 2em;
   margin-bottom: 0.7em;
   text-align: left;
   font-weight: bold;
+}
+#schedule p {
+  overflow: hidden;
+  word-break: keep-all;
+  font-size: 1.5vw;
 }
 
 marquee {
