@@ -9,7 +9,10 @@ let tableData = []
 
 //The teams that should not be shown on infoboard
 const Teams = [
-  "gel080322" //Elektriker
+  "gel080322", //Elektriker
+  "htxb21", //HTX
+  "gsm010123", //Smed 
+  "ltm010123e" // Brobyg Teknisk
 ];
 const apiEndPoint =
   "https://iws.itcn.dk/techcollege/Schedules?departmentCode=smed";
