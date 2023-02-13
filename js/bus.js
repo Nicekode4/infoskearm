@@ -1,5 +1,6 @@
 const url = "https://xmlopen.rejseplanen.dk/bin/rest.exe/multiDepartureBoard?id1=851400602&id2=851973402&rttime&format=json&useBus=1"
 let apiData;
+let fakeDelay = "06:10"
 
 for (let index = 0; index < 6; index++) {
     fetch(url)
@@ -18,8 +19,8 @@ for (let index = 0; index < 6; index++) {
         .finally(() => {
             //When all is set and done
 
-
-            if (apiData.rtTime == undefined) {
+console.log(unixConvert("18:00"));
+            if (apiData.rtTime === undefined) {
                 document.querySelector('#busSpan').innerHTML += `<p>${apiData.line}</p>
 <p>${apiData.direction}</p>
 <p style="padding: 0; margin: 0;">${apiData.time}</p>
@@ -45,4 +46,15 @@ for (let index = 0; index < 6; index++) {
 
         
 
+}
+function unixConvert(time) {
+    const dateStr = `1970-01-01 ${time}`;
+
+    const date = new Date(dateStr);
+    
+    const timestampInMs = date.getTime();
+    
+    const unixTimestamp = Math.floor(date.getTime() / 1000);
+    console.log(unixTimestamp);
+    return unixTimestamp
 }
