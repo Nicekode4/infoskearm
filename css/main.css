@@ -110,6 +110,7 @@ marquee h4 {
 
 #schedule {
   display: grid;
+
   grid-template-columns: repeat(5, 1fr);
   margin-top: 3vw;
   margin-right: 10em;
